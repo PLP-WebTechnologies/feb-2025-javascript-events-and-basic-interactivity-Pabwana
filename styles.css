@@ -1,0 +1,275 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5a623;
+    --accent-color: #50e3c2;
+    --background-color: #f9fafb;
+    --text-color: #333;
+    --error-color: #e94e77;
+    --success-color: #3bb75e;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: var(--background-color);
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.4;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+  main {
+    max-width: 900px;
+    width: 100%;
+  }
+  h1, h2, h3 {
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.2rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
+  section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    transition: box-shadow 0.3s ease;
+  }
+  section:hover {
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.15);
+  }
+  button {
+    cursor: pointer;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    user-select: none;
+  }
+  button:hover {
+    background-color: var(--secondary-color);
+  }
+  button:active {
+    transform: scale(0.95);
+  }
+  .color-change-btn {
+    margin-top: 1rem;
+  }
+  /* Hover effect example */
+  .hover-effect {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .hover-effect:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1) rotate(2deg);
+  }
+  
+  /* Keypress detection */
+  #keypress-area {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 2px dashed var(--primary-color);
+    border-radius: 8px;
+    min-height: 50px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    user-select: none;
+    text-align: center;
+  }
+  
+  /* Secret message */
+  #secret-message {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: var(--success-color);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  #secret-message.visible {
+    opacity: 1;
+  }
+  
+  /* Image Gallery */
+  .gallery {
+    position: relative;
+    max-width: 100%;
+    margin-top: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  }
+  .gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  .gallery img.active {
+    opacity: 1;
+  }
+  .gallery-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+    pointer-events: none;
+  }
+  .gallery-controls button {
+    pointer-events: all;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+    line-height: 0;
+  }
+  .gallery-controls button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  /* Tabs */
+  .tabs {
+    margin-top: 1rem;
+  }
+  .tab-buttons {
+    display: flex;
+    border-bottom: 2px solid var(--primary-color);
+  }
+  .tab-buttons button {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+    transition: border-bottom-color 0.3s ease;
+  }
+  .tab-buttons button.active {
+    border-bottom-color: var(--secondary-color);
+    color: var(--secondary-color);
+  }
+  .tab-content {
+    padding: 1rem;
+    animation: fadeIn 0.5s ease;
+    background-color: #fafafa;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Accordion */
+  .accordion {
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .accordion-item {
+    border-bottom: 1px solid #ddd;
+  }
+  .accordion-item:last-child {
+    border-bottom: none;
+  }
+  .accordion-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  .accordion-header:hover {
+    background-color: var(--secondary-color);
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background-color: #fafafa;
+    padding: 0 1rem;
+  }
+  .accordion-content.open {
+    padding: 1rem;
+    max-height: 150px;
+  }
+  
+  /* Form */
+  form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  label {
+    font-weight: 600;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+    outline-offset: 2px;
+    transition: border-color 0.3s ease;
+  }
+  input:focus {
+    border-color: var(--primary-color);
+  }
+  input.valid {
+    border-color: var(--success-color);
+  }
+  input.invalid {
+    border-color: var(--error-color);
+  }
+  .error-message {
+    color: var(--error-color);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+  }
+  .success-message {
+    color: var(--success-color);
+    font-size: 0.9rem;
+  }
+  button.submit-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+  }
+  button.submit-btn:hover {
+    background-color: var(--primary-color);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  

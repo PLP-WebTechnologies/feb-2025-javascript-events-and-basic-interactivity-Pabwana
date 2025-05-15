@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interactive Bundle of Joy 🎉</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main>
+  <h1>Interactive Bundle of Joy 🎉</h1>
+
+  <!-- Event Handling Section -->
+  <section aria-labelledby="event-handling-title">
+    <h2 id="event-handling-title">1. Event Handling 🎈</h2>
+    <button id="colorToggleBtn" aria-pressed="false" aria-label="Click to change button color and text">
+      Click me!
+    </button>
+    <div class="hover-effect" tabindex="0" role="button" aria-label="Hover over me for effect">
+      Hover over me!
+    </div>
+    <div id="keypress-area" tabindex="0" aria-live="polite" aria-label="Press any key and see it here">
+      Press any key here...
+    </div>
+    <div id="secret-message" role="alert" aria-live="assertive"></div>
+  </section>
+
+  <!-- Interactive Elements Section -->
+  <section aria-labelledby="interactive-elements-title">
+    <h2 id="interactive-elements-title">2. Interactive Elements 🎮</h2>
+
+    <!-- Image Gallery -->
+    <h3>Image Gallery / Slideshow</h3>
+    <div class="gallery" aria-label="Image gallery slideshow" role="region">
+      <img src="https://picsum.photos/id/1015/600/350" alt="Scenic mountain" class="active" />
+      <img src="https://picsum.photos/id/1016/600/350" alt="Forest trail" />
+      <img src="https://picsum.photos/id/1025/600/350" alt="Mountain lake" />
+      <div class="gallery-controls">
+        <button id="prevImg" aria-label="Previous image">&#10094;</button>
+        <button id="nextImg" aria-label="Next image">&#10095;</button>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <h3>Tabs</h3>
+    <div class="tabs" role="tablist" aria-label="Sample tabs">
+      <div class="tab-buttons">
+        <button role="tab" aria-selected="true" id="tab1-btn" aria-controls="tab1-content">Tab One</button>
+        <button role="tab" aria-selected="false" id="tab2-btn" aria-controls="tab2-content">Tab Two</button>
+        <button role="tab" aria-selected="false" id="tab3-btn" aria-controls="tab3-content">Tab Three</button>
+      </div>
+      <div tabindex="0" role="tabpanel" id="tab1-content" aria-labelledby="tab1-btn" class="tab-content">
+        Content for Tab One: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+      <div tabindex="0" role="tabpanel" id="tab2-content" aria-labelledby="tab2-btn" class="tab-content" hidden>
+        Content for Tab Two: Vestibulum congue lorem vitae varius cursus.
+      </div>
+      <div tabindex="0" role="tabpanel" id="tab3-content" aria-labelledby="tab3-btn" class="tab-content" hidden>
+        Content for Tab Three: Aliquam erat volutpat. Donec pellentesque leo et sapien mollis, at rhoncus erat luctus.
+      </div>
+    </div>
+
+    <!-- Accordion -->
+    <h3>Accordion</h3>
+    <div class="accordion" role="region" aria-label="Sample accordion">
+      <div class="accordion-item">
+        <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="acc1-content" id="acc1-header">
+          Accordion Item One
+        </div>
+        <div class="accordion-content" id="acc1-content" role="region" aria-labelledby="acc1-header" hidden>
+          Details for accordion item one: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="acc2-content" id="acc2-header">
+          Accordion Item Two
+        </div>
+        <div class="accordion-content" id="acc2-content" role="region" aria-labelledby="acc2-header" hidden>
+          Details for accordion item two: Praesent euismod, urna eget laoreet gravida, quam eros suscipit turpis, sed tempus elit ex nec velit.
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header" tabindex="0" role="button" aria-expanded="false" aria-controls="acc3-content" id="acc3-header">
+          Accordion Item Three
+        </div>
+        <div class="accordion-content" id="acc3-content" role="region" aria-labelledby="acc3-header" hidden>
+          Details for accordion item three: Duis mollis sapien vel sapien ultricies, vitae convallis mauris rhoncus.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Validation Section -->
+  <section aria-labelledby="form-validation-title">
+    <h2 id="form-validation-title">3. Form Validation 📋✅</h2>
+    <form id="sampleForm" novalidate>
+      <div>
+        <label for="nameInput">Name <span aria-hidden="true" style="color: var(--error-color)">*</span></label>
+        <input type="text" id="nameInput" name="name" aria-describedby="nameError" required />
+        <div id="nameError" class="error-message" aria-live="polite"></div>
+      </div>
+      <div>
+        <label for="emailInput">Email <span aria-hidden="true" style="color: var(--error-color)">*</span></label>
+        <input type="email" id="emailInput" name="email" aria-describedby="emailError" required />
+        <div id="emailError" class="error-message" aria-live="polite"></div>
+      </div>
+      <div>
+        <label for="passwordInput">Password <span aria-hidden="true" style="color: var(--error-color)">*</span></label>
+        <input type="password" id="passwordInput" name="password" aria-describedby="passwordError" required minlength="8" />
+        <div id="passwordError" class="error-message" aria-live="polite"></div>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+      <div id="formSuccess" class="success-message" aria-live="polite" role="alert"></div>
+    </form>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
